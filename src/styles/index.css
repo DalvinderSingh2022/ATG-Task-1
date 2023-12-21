@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;200;300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'IBM Plex Sans', sans-serif;
+  box-sizing: border-box;
+  font-style: normal;
+  font-weight: normal;
+  line-height: normal;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex.col {
+  flex-direction: column;
+}
+
+nav {
+  padding: 24px 72px;
+  background: #FFF;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.12);
+  height: 72px;
+  display: flex;
+  justify-content: space-between;
+}
+
+nav .logo {
+  width: 162.566px;
+  height: 24px;
+}
+
+nav .search {
+  border-radius: 21px;
+  background: #F2F2F2;
+  width: 360px;
+  height: 42px;
+  margin-top: -8px;
+}
+
+nav .search svg {
+  width: 22px;
+  height: 22px;
+  margin: 10px 14px;
+}
+
+nav .search span {
+  color: #5C5C5C;
+  font-size: 14px;
+  font-weight: 500;
+  margin: 12px 0 11px;
+}
+
+nav .account {
+  color: #2E2E2E;
+  font-size: 16px;
+  margin: 2px 0 -2px;
+}
+
+nav .account span {
+  color: #2F6CE5;
+  font-weight: 700;
+}
+
+nav .account svg {
+  width: 24px;
+  height: 24px;
+}
+
+aside {
+  height: 440px;
+  background-image: url('https://s3-alpha-sig.figma.com/img/756e/302b/7d56a759ac56bc165f65c40094aba4e8?Expires=1704067200&Signature=F0ruKk6YZIt1NdI5zgs7g7QLotkI4jb~46I~Wb04CDtmIGAtlOgaY826gjaob1DSw2miWFoV3wwBWM~HE91m7NQ~Rw8x5pxk0MqtuW3kVl6wb5kCg9bE5unXwuGJeT2HZ9GxUaHkA42jXwa2npFKrugrvVr3wMCoc5sI-BqFGuuJwxt2L6OxZQHav4sjuj1dlgM9rw89dNJtxlo4w8e5Jh9TEhsN2l~cvQ8Kj6q3SrTjbyPVazOiziXy84l8TdY9Jd8zU8TLWtFRcv5Bm78WALHvXETgBkzIELqRd078UxUnVafGL4q6CKlbHe9SaEILtweHcKjpJPH0ZTOhV2ywog__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4');
+  background-position-x: 50%;
+  background-position-y: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: lightgray;
+  color: #FFF;
+}
+
+aside>div {
+  height: 100%;
+  padding: 80px 200px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.60) 100%);
+  justify-content: flex-end;
+}
+
+aside h1 {
+  font-weight: 700;
+  font-size: 36px;
+}
+
+aside h2 {
+  font-weight: 400;
+  font-size: 18px;
+}
