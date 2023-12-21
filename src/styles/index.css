@@ -18,6 +18,12 @@
   flex-direction: column;
 }
 
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
 nav {
   padding: 24px 72px;
   background: #FFF;
@@ -95,4 +101,191 @@ aside h1 {
 aside h2 {
   font-weight: 400;
   font-size: 18px;
+}
+
+article {
+  padding: 0 200px;
+}
+
+article section {
+  margin: 32px 0 28px;
+  border-bottom: 1px solid #E0E0E0;
+  justify-content: space-between;
+}
+
+article section .filters {
+  gap: 20px;
+}
+
+article section .filters span {
+  color: #8A8A8A;
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+article section .filters span:first-of-type {
+  color: #000;
+}
+
+article section .buttons {
+  gap: 16px;
+}
+
+article section .buttons button {
+  border-radius: 4px;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: #2F6CE5;
+  width: 125px;
+  height: 36px;
+}
+
+article section .buttons button:first-of-type {
+  width: 133px;
+  background: #EDEEF0;
+}
+
+article section .buttons svg {
+  width: 22px;
+  height: 22px;
+}
+
+article section .buttons button:first-of-type span {
+  color: #000;
+}
+
+article section .buttons span {
+  color: #FFF;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+article .PostSection {
+  justify-content: space-between;
+}
+
+article .PostSection .posts {
+  gap: 16px;
+  padding-bottom: 98px;
+}
+
+article .posts .post {
+  border-radius: 4px;
+  border: 1px solid #E0E0E0;
+  background: #FFF;
+  padding: 20px;
+  width: 692px;
+  overflow: hidden;
+  color: #000;
+}
+
+article .posts .post img {
+  width: calc(100% + 40px);
+  height: 220px;
+  margin: -20px -20px 12px;
+  object-fit: cover;
+}
+
+article .posts .post .type {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+article .posts .post .heading {
+  gap: 24px;
+  justify-content: space-between;
+  margin: 10px 0 12px;
+}
+
+article .posts .post .heading svg {
+  width: 28px;
+  height: 28px;
+}
+
+article .posts .post .heading h1 {
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 29.517px;
+}
+
+article .posts .post .detail {
+  color: #5C5C5C;
+  font-size: 19px;
+  font-weight: 400;
+  line-height: 25.492px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: block;
+}
+
+article .posts .post .link {
+  border-radius: 8px;
+  border: 0.7px solid #A9AEB8;
+  background: #FFF;
+  color: #02B875;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 18.252px;
+  padding: 9px 0;
+  width: 100%;
+}
+
+article .posts .post .link.visit {
+  color: #E56135;
+}
+
+article .posts .post .Userlikes {
+  justify-content: space-between;
+  margin-top: 32px;
+}
+
+article .posts .post .user {
+  gap: 10px;
+  align-items: center;
+}
+
+article .posts .post .user img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  margin: 0;
+}
+
+article .posts .post .user span {
+  color: #000;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+article .posts .post .likes {
+  align-items: center;
+  gap: 40px;
+}
+
+article .posts .post .likes button {
+  border-radius: 2px;
+  background: #EDEEF0;
+  padding: 9px 12px;
+}
+
+article .posts .post .likes svg {
+  width: 18px;
+  height: 18px;
+}
+
+article .posts .post .likes .likesCount {
+  gap: 8px;
+  align-items: center;
+}
+
+article .posts .post .likes .likesCount * {
+  gap: 8px;
+  align-items: center;
+  color: #525252;
+  font-size: 14px;
+  font-weight: 500;
 }
