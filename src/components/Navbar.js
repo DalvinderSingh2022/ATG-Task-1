@@ -1,9 +1,11 @@
 import React, { useContext, useState } from 'react'
 import { ScreenContext } from '../App';
+import Modal from './Modal';
 
 const Navbar = () => {
     const { islargescreen } = useContext(ScreenContext);
     const [search, setSearch] = useState('');
+    const [showModal, setShowModal] = useState(false);
 
     return (
         <>
@@ -52,7 +54,7 @@ const Navbar = () => {
                             />
                         </label>
                     </div>
-                    <div className="account flex">
+                    <div className="account flex" onClick={() => setShowModal(true)}>
                         <p>Create account. <span>It’s free!</span></p>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                             <g clipPath="url(#clip0_1_822)">
@@ -72,8 +74,9 @@ const Navbar = () => {
                     </svg>
                     <button>Join Group</button>
                 </nav>}
+            {showModal && <Modal remove={() => setShowModal(false)} />}
         </>
     )
 }
 
-export default Navbar
+export default Navbar;
