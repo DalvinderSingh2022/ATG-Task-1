@@ -1,14 +1,17 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import poster from '../assets/modal.png';
+import { ScreenContext } from '../App';
 
 const Modal = ({ remove }) => {
+    const { islargescreen } = useContext(ScreenContext);
     const [isLogin, setIsLogin] = useState(true);
+
     return (
         <div className='modal'>
             <div className='flex col'>
                 <svg onClick={remove} className='closebtn' xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
                     <g clip-path="url(#clip0_1_2255)">
-                        <path d="M14 2.33331C7.54838 2.33331 2.33337 7.54831 2.33337 14C2.33337 20.4516 7.54838 25.6666 14 25.6666C20.4517 25.6666 25.6667 20.4516 25.6667 14C25.6667 7.54831 20.4517 2.33331 14 2.33331ZM19.8334 18.1883L18.1884 19.8333L14 15.645L9.81171 19.8333L8.16671 18.1883L12.355 14L8.16671 9.81164L9.81171 8.16665L14 12.355L18.1884 8.16665L19.8334 9.81164L15.645 14L19.8334 18.1883Z" fill="white" />
+                        <path d="M14 2.33331C7.54838 2.33331 2.33337 7.54831 2.33337 14C2.33337 20.4516 7.54838 25.6666 14 25.6666C20.4517 25.6666 25.6667 20.4516 25.6667 14C25.6667 7.54831 20.4517 2.33331 14 2.33331ZM19.8334 18.1883L18.1884 19.8333L14 15.645L9.81171 19.8333L8.16671 18.1883L12.355 14L8.16671 9.81164L9.81171 8.16665L14 12.355L18.1884 8.16665L19.8334 9.81164L15.645 14L19.8334 18.1883Z" fill={islargescreen ? "white" : "#212529"} />
                     </g>
                     <defs>
                         <clipPath id="clip0_1_2255">
@@ -16,10 +19,10 @@ const Modal = ({ remove }) => {
                         </clipPath>
                     </defs>
                 </svg>
-                <div className="heading">Let's learn, share & inspire each other with our passion for computer engineering. Sign up now 🤘🏼</div>
+                {islargescreen && <div className="heading">Let's learn, share & inspire each other with our passion for computer engineering. Sign up now 🤘🏼</div>}
                 <div className="flex">
                     <div className='form flex col'>
-                        <h1>Create Account</h1>
+                        <h1>{isLogin ? "Create Account" : "Sign In"}</h1>
                         <div className="inputs flex col">
                             {isLogin && <div className="flex">
                                 <input type="text" placeholder='First Name' />
@@ -35,7 +38,15 @@ const Modal = ({ remove }) => {
                                 <input type="password" placeholder='Confirm Password' />
                             </div>}
                         </div>
-                        <button className='group submit'>{isLogin ? "Create Account" : "Sign In"}</button>
+
+                        {islargescreen ?
+                            <button className='group submit'>{isLogin ? "Create Account" : "Sign In"}</button> :
+
+                            <div className="button flex">
+                                <button className='group submit'>{isLogin ? "Create Account" : "Sign In"}</button>
+                                <span onClick={() => setIsLogin(prev => !prev)}>{isLogin ? "or, Sign In" : "or, Create Account"} </span>
+                            </div>
+                        }
                         <button className='group'>
                             <img src="https://s3-alpha-sig.figma.com/img/2260/c71f/967377e16ffbb611ef03393e79e51f6e?Expires=1704067200&Signature=bPlwkdALWwDwJMe6bjx0SQxpumR6gkdL~e5h9pUXHkBToQmY37QocJzFwWXp4VAivbDo1SYQueJQluE51yVBSTTQpCNGoT6zt3~ji9tU90t6SBTe2IlzeTqj~A2mCxICtC7Xb49y75CGwfJyZmICIfr2xB27h~kBrK-YXeSKZqbWCrE6PiAvFqtXqGBnkyoCEiYq~r8r9ePVRY-tM6mQA~YIFyU8DeP6I6OFjlnK0V9f2g9F~IwSyheUJqXvOAREKuhWhFmUSd0rh8MPjbVIeoHYEu94yWBLx7PGbnSdTgj9siZAog90CUS46bxK7Txydmf2jgAaVglRmwAAUtLWEw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" alt="facebook" />
                             <span>Sign {isLogin ? "up" : "in"} with Facebook</span>
@@ -56,16 +67,17 @@ const Modal = ({ remove }) => {
                             </svg>
                             <span>Sign {isLogin ? "up" : "in"} with Google</span>
                         </button>
+                        {(!islargescreen && isLogin) && <span className="message">By signing up, you agree to our Terms & conditions, Privacy policy</span>}
                         {!isLogin && <div className="forgot">Forget Password?</div>}
                     </div>
-                    <div className="flex poster col">
+                    {islargescreen && <div className="flex poster col">
                         <div className="link flex">
                             {isLogin ? "Already have an account?" : "Don’t have an account yet?"}
                             <span onClick={() => setIsLogin(prev => !prev)}>{isLogin ? "Sign In" : "Create new for free!"}</span>
                         </div>
                         <img src={poster} alt="poster" />
                         {isLogin && <span className="message">By signing up, you agree to our Terms & conditions, Privacy policy</span>}
-                    </div>
+                    </div>}
                 </div>
             </div>
         </div>
