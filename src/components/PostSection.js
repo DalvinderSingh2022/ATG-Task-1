@@ -2,7 +2,7 @@ import React from 'react'
 import Post from './Post';
 import LocationSection from './LocationSection';
 
-const PostSection = ({ props }) => {
+const PostSection = () => {
     return (
         <div className='PostSection'>
             <div className="posts flex col">
@@ -42,7 +42,7 @@ const PostSection = ({ props }) => {
                     <button className="link">Apply on Timesjobs</button>
                 </Post>
             </div>
-            <LocationSection props={{ ...props }} />
+            <LocationSection />
         </div>
     )
 }

@@ -2,11 +2,11 @@ import React, { useContext, useRef, useState } from 'react';
 import { ScreenContext } from '../App';
 import RecommendedList from './RecommendedList';
 
-const LocationSection = ({ props }) => {
+const LocationSection = () => {
     const [search, setSearch] = useState("Noida, India");
     const [focused, setFocused] = useState(false);
     const inputRef = useRef(null);
-    const islargescreen = useContext(ScreenContext);
+    const { islargescreen, joined } = useContext(ScreenContext);
 
     return (
         <div className="location flex col">
@@ -72,7 +72,7 @@ const LocationSection = ({ props }) => {
                 </svg>
                 <span>Your location will help us serve better and extend a personalised experience.</span>
             </div>
-            {(props.joined && islargescreen) && <RecommendedList />}
+            {(joined && islargescreen) && <RecommendedList />}
         </div >
     )
 }

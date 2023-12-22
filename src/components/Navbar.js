@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react'
 import { ScreenContext } from '../App';
 
 const Navbar = () => {
-    const islargescreen = useContext(ScreenContext);
+    const { islargescreen } = useContext(ScreenContext);
     const [search, setSearch] = useState('');
 
     return (

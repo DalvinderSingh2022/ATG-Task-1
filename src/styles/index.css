@@ -72,6 +72,7 @@ nav .account {
   color: #2E2E2E;
   font-size: 16px;
   margin: 2px 0 -2px;
+  cursor: pointer;
 }
 
 nav .account span {
@@ -244,6 +245,26 @@ article .posts .post .heading {
   gap: 24px;
   justify-content: space-between;
   margin: 10px 0 12px;
+  position: relative;
+}
+
+article .posts .post .heading .options {
+  position: absolute;
+  border-radius: 4px;
+  background: #FFF;
+  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.08), 0px 2px 8px 0px rgba(0, 0, 0, 0.16);
+  right: 0;
+  top: 36px;
+  padding: 11px 12px;
+  width: 160px;
+  gap: 13px;
+}
+
+article .posts .post .heading .option {
+  color: #000;
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
 }
 
 article .posts .post .heading svg {
@@ -251,6 +272,7 @@ article .posts .post .heading svg {
   height: 32px;
   padding: 2px 4px;
   border-radius: 4px;
+  cursor: pointer;
 }
 
 article .posts .post .heading svg.active {
@@ -339,6 +361,7 @@ article .posts .post .Userviews button {
   height: 36px;
   justify-content: center;
   border-radius: 4px;
+  cursor: pointer;
 }
 
 article .posts .post .Userviews button svg {
@@ -397,6 +420,108 @@ article .location .msg span {
   font-size: 12px;
   font-weight: 400;
   white-space: wrap;
+}
+
+.recommended .heading {
+  align-items: center;
+  gap: 4px;
+}
+
+.recommended .heading svg {
+  min-width: 16.5px;
+  height: 15px;
+}
+
+.recommended .heading h1 {
+  color: #000;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+}
+
+.recommended .list {
+  gap: 22px;
+  margin: 24px 0;
+}
+
+.recommended .list .item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.recommended .item img {
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+}
+
+.recommended .list .item span {
+  width: 100%;
+  color: #000;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.recommended .list .item button {
+  border-radius: 14px;
+  background: #EDEEF0;
+  width: 60px;
+  height: 24px;
+  color: #000;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 400;
+  padding: 4px 12px;
+  cursor: pointer;
+}
+
+.recommended .list .item button.active {
+  width: 72px;
+  background: #000;
+  color: #FFF;
+}
+
+.recommended .link {
+  display: block;
+  width: 100%;
+  color: #2F6CE5;
+  text-align: right;
+  font-size: 12px;
+  font-weight: 400;
+  margin: 36px 0;
+  cursor: pointer;
+}
+
+.modal {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  background-color: rgba(0, 0, 0, .6);
+  z-index: 999;
+  top: 0;
+  position: fixed;
+  place-items: center;
+}
+
+.modal>div {
+  width: 736px;
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+.modal .heading {
+  border-radius: 8px 8px 0px 0px;
+  background: #EFFFF4;
+  color: #008A45;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+  padding: 17px 0;
+  width: 100%;
 }
 
 @media screen and (max-width:1080px) {
